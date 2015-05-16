@@ -1,9 +1,20 @@
+import org.omg.CosNaming.NamingContextPackage.NotFound;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
+
+/**
+ * The Grid class represents the cell grid in the GUI. It also implements
+ * the grid logic, as well as some utilities used by the search algorithms,
+ * these are mainly:
+ * 		{@code distance (Point, Point)}
+ * 		{@code getNeighbors (Point)}
+ * This class also implements the action listener for each grid cell.
+ */
 
 public class Grid extends JPanel implements ActionListener {
 
@@ -79,7 +90,9 @@ public class Grid extends JPanel implements ActionListener {
 		sa.run ();
 		root = sa.root;
 		route = sa.route;
-		drawRoute ();
+		if (root != null) {
+			drawRoute ();
+		}
 	}
 
 	public void drawRoute () {

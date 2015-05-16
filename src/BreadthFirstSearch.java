@@ -1,9 +1,14 @@
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
-* Created by PeterCP on 4/28/15.
-*/
+ * This algorithm takes the grid as transparent. This means that it
+ * will only work with the states Start Point, End Point, and Impossible.
+ * It will virtually ignore any other states, but it will use their costs
+ * when calculating the route.
+ */
 
 public class BreadthFirstSearch extends AbstractSearchAlgorithm {
 

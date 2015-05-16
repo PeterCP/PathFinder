@@ -1,3 +1,9 @@
+/**
+ * The SearchAlgorithm enum class is a wrapper for each individual search
+ * algorithm. It is used by the combo box {@code PathFinder.methodComboBox}
+ * to pass the correct algorithm to the Grid class.
+ */
+
 public enum SearchAlgorithm {
 
 	BREADTH (BreadthFirstSearch.class, "Breadth First Search"),
@@ -9,7 +15,7 @@ public enum SearchAlgorithm {
 
 	private SearchAlgorithm (Class<? extends AbstractSearchAlgorithm> c, String name) {
 		try {
-			searchAlgorithm = /*(AbstractSearchAlgorithm)*/ c.newInstance ();
+			searchAlgorithm = c.newInstance ();
 		}
 		catch (Exception e) {
 			searchAlgorithm = null;

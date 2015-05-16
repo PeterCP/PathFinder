@@ -1,6 +1,11 @@
 import java.awt.Point;
 import java.util.*;
 
+/**
+ * Unlike the others, this algorithm will take into account the cost
+ * of each node. This means that it will find the path with the smallest cost.
+ */
+
 public class AStarSearch extends AbstractSearchAlgorithm {
 
 	@Override

@@ -1,6 +1,12 @@
 import java.awt.*;
 import java.util.*;
 
+/* This algorithm takes the grid as transparent. This means that it
+ * will only work with the states Start Point, End Point, and Impossible.
+ * It will virtually ignore any other states, but it will use their costs
+ * when calculating the route.
+ */
+
 public class DepthFirstSearch extends AbstractSearchAlgorithm {
 
 	@Override

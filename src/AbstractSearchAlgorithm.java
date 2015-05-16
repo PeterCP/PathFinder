@@ -1,5 +1,8 @@
 import java.awt.Point;
-//import java.util.ArrayList;
+
+/**
+ * Abstract class used as super class for each search algorithm implementation
+ */
 
 public abstract class AbstractSearchAlgorithm {
 

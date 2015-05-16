@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
+/**
+ * Tree implementation obtained from StackOverflow and modified for the
+ * specific needs of the project.
+ */
+
 public class Tree {
 
 	private static final int indent = 2;

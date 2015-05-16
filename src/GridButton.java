@@ -3,6 +3,16 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * The GridButton class represents a cell in the grid. The decision
+ * to represent said grid cells as subclasses of JButton was based on
+ * the fact that the easiest way to implement clicking for each individual
+ * cell was using buttons.
+ * The {@code ActionListener} for these buttons is implemented in
+ * {@code Grid} because it contains necessary information needed for the
+ * clicking
+ */
+
 public class GridButton extends JButton {
 
 	public static int SIZE = 30;
@@ -34,7 +44,6 @@ public class GridButton extends JButton {
 	public void setState (State state) {
 		this.state = state;
 		setBackground (state.color);
-		//setText (this.toString ());
 		setToolTipText (state.name);
 		updateUI ();
 	}
@@ -54,6 +63,7 @@ public class GridButton extends JButton {
 
 	@Override
 	public String toString () {
-		return /*state.name.substring (0, 1) + "(" +*/ x + "," + y /*+ ")"*/;
+		//return state.name.substring (0, 1) + "(" + x + "," + y + ")";
+		return x + "," + y;
 	}
 }

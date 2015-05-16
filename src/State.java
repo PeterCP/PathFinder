@@ -1,5 +1,9 @@
 import java.awt.Color;
 
+/**
+ * Enum that contains every possible state for a grid cell.
+ */
+
 public enum State {
 
 	NORMAL ("Normal", Color.WHITE, 1.0),
