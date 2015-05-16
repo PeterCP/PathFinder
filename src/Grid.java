@@ -1,5 +1,3 @@
-import org.omg.CosNaming.NamingContextPackage.NotFound;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,8 +9,8 @@ import java.util.Random;
  * The Grid class represents the cell grid in the GUI. It also implements
  * the grid logic, as well as some utilities used by the search algorithms,
  * these are mainly:
- * 		{@code distance (Point, Point)}
- * 		{@code getNeighbors (Point)}
+ * {@code distance (Point, Point)}
+ * {@code getNeighbors (Point)}
  * This class also implements the action listener for each grid cell.
  */
 
@@ -49,26 +47,6 @@ public class Grid extends JPanel implements ActionListener {
 		setSize (GridButton.SIZE * xCount, GridButton.SIZE * yCount);
 	}
 
-	public void clear () {
-		for (int j = 0; j < yCount; j++) {
-			for (int i = 0; i < xCount; i++) {
-				buttons[i][j].setState (State.NORMAL);
-				buttons[i][j].setText ("");
-			}
-		}
-		start = null;
-		end = null;
-	}
-
-	public void clearRoute () {
-		for (int j = 0; j < yCount; j++) {
-			for (int i = 0; i < xCount; i++) {
-				buttons[i][j].setRoute (false);
-				buttons[i][j].setText ("");
-			}
-		}
-	}
-
 	public void search () {
 		if (start == null) {
 			Random r = new Random ();
@@ -95,7 +73,32 @@ public class Grid extends JPanel implements ActionListener {
 		}
 	}
 
+	public void clear () {
+		for (int j = 0; j < yCount; j++) {
+			for (int i = 0; i < xCount; i++) {
+				buttons[i][j].setState (State.NORMAL);
+				buttons[i][j].setText ("");
+				buttons[i][j].updateUI ();
+			}
+		}
+		//updateUI ();
+		start = null;
+		end = null;
+	}
+
+	public void clearRoute () {
+		for (int j = 0; j < yCount; j++) {
+			for (int i = 0; i < xCount; i++) {
+				buttons[i][j].setRoute (false);
+				buttons[i][j].setText ("");
+				buttons[i][j].updateUI ();
+			}
+		}
+		//updateUI ();
+	}
+
 	public void drawRoute () {
+		drawRoute (root);
 		drawRoute (root);
 
 		Tree node = route;
@@ -111,6 +114,7 @@ public class Grid extends JPanel implements ActionListener {
 		String c = String.valueOf (node.getCost ());
 		get (node.getPoint ()).setText (c);
 		get (node.getPoint ()).setToolTipText (String.valueOf (node.getCost ()));
+		get (node.getPoint ()).updateUI ();
 
 		for (Tree n : node.getSubTrees ()) {
 			drawRoute (n);
