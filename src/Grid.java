@@ -68,9 +68,7 @@ public class Grid extends JPanel implements ActionListener {
 		sa.run ();
 		root = sa.root;
 		route = sa.route;
-		if (root != null) {
-			drawRoute ();
-		}
+		drawRoute ();
 	}
 
 	public void clear () {
@@ -99,14 +97,15 @@ public class Grid extends JPanel implements ActionListener {
 
 	public void drawRoute () {
 		drawRoute (root);
-		drawRoute (root);
 
-		Tree node = route;
-		while (node.getParent () != null) {
-			if (get (node.getPoint ()).getState () != State.START &&
-					get (node.getPoint ()).getState () != State.END)
-				get (node.getPoint ()).setRoute (true);
-			node = node.getParent ();
+		if (route != null) {
+			Tree node = route;
+			while (node.getParent () != null) {
+				if (get (node.getPoint ()).getState () != State.START &&
+						get (node.getPoint ()).getState () != State.END)
+					get (node.getPoint ()).setRoute (true);
+				node = node.getParent ();
+			}
 		}
 	}
 
