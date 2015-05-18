@@ -1,10 +1,14 @@
 import java.awt.*;
 import java.util.*;
 
-/* This algorithm takes the grid as transparent. This means that it
+/**
+ * This algorithm takes the grid as transparent. This means that it
  * will only work with the states Start Point, End Point, and Impossible.
  * It will virtually ignore any other states, but it will use their costs
  * when calculating the route.
+ *
+ * The Depth First Search algorithm runs on a stack basis. This means that
+ * the last node to enter the stack will be the first to be explored.
  */
 
 public class DepthFirstSearch extends AbstractSearchAlgorithm {

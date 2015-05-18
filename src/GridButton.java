@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  * cell was using buttons.
  * The {@code ActionListener} for these buttons is implemented in
  * {@code Grid} because it contains necessary information needed for the
- * clicking
+ * clicking.
  */
 
 public class GridButton extends JButton {
@@ -28,7 +28,6 @@ public class GridButton extends JButton {
 
 		setSize (SIZE, SIZE);
 		addActionListener (al);
-		//addActionListener (this);
 
 		setBorder (new LineBorder (Color.BLACK));
 		setOpaque (true);

@@ -4,6 +4,13 @@ import java.util.*;
 /**
  * Unlike the others, this algorithm will take into account the cost
  * of each node. This means that it will find the path with the smallest cost.
+ *
+ * The A* search algorithm runs on a lowest-cost-first basis. The cheapest node
+ * in the queue (which in this case is implemented as an ArrayList) will be
+ * explored first.
+ *
+ * The cost is determined by adding the cost of the actual path with the
+ * straight-line distance between the actual node and the goal.
  */
 
 public class AStarSearch extends AbstractSearchAlgorithm {
@@ -43,7 +50,6 @@ public class AStarSearch extends AbstractSearchAlgorithm {
 				}
 			}
 		}
-
 		System.out.println (root);
 	}
 }

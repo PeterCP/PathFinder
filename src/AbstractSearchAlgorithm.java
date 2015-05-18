@@ -2,6 +2,7 @@ import java.awt.Point;
 
 /**
  * Abstract class used as super class for each search algorithm implementation
+ * This class implements the basic function needed for every search algorithm.
  */
 
 public abstract class AbstractSearchAlgorithm {

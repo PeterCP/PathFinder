@@ -8,6 +8,9 @@ import java.util.Queue;
  * will only work with the states Start Point, End Point, and Impossible.
  * It will virtually ignore any other states, but it will use their costs
  * when calculating the route.
+ *
+ * The Breadth First Search algorithm runs on a queue basis. The first node
+ * in the queue will be the first node to be explored.
  */
 
 public class BreadthFirstSearch extends AbstractSearchAlgorithm {
